@@ -34,7 +34,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID, 894a35bc-205b-4a1f-b00a-1ef8c86a7275)}/master.m3u8</stringProp>
+          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID, 894a35bc-205b-4a1f-b00a-1ef8c86a7275)}/mainManifest.m3u8</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -43,7 +43,7 @@
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           <stringProp name="HTTPSampler.connect_timeout"></stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          <stringProp name="TestPlan.comments">https://g21.g-mana.live/media/894a35bc-205b-4a1f-b00a-1ef8c86a7275/master.m3u8</stringProp>
+          <stringProp name="TestPlan.comments">https://g11.g-mana.live/media/894a35bc-205b-4a1f-b00a-1ef8c86a7275/mainManifest.m3u8</stringProp>
         </HTTPSamplerProxy>
         <hashTree>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
