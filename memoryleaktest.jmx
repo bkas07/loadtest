@@ -42,7 +42,7 @@
             <stringProp name="RegexExtractor.regex">(playlist_\d+\.m3u8\?[^ \r\n]*)</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
             <stringProp name="RegexExtractor.default">abc</stringProp>
-            <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
             <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           </RegexExtractor>
           <hashTree/>
