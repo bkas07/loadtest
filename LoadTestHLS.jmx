@@ -24,10 +24,10 @@
       </ThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="master">
-          <stringProp name="TestPlan.comments">https://g21.g-mana.live/media/894a35bc-205b-4a1f-b00a-1ef8c86a7275/master.m3u8</stringProp>
-          <stringProp name="HTTPSampler.domain">${__P(serverName, g11.g-mana.live)}</stringProp>
+          <stringProp name="TestPlan.comments">master manifest</stringProp>
+          <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID, 32e5bf61-768d-4973-87c2-0969100b2cb9)}/master.m3u8</stringProp>
+          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID, 9ebc7d6f-6474-42f3-ae5c-fb7b9b288823)}/master.m3u8</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -58,10 +58,10 @@
         </LoopController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="profilemanifest">
-            <stringProp name="TestPlan.comments">/media/894a35bc-205b-4a1f-b00a-1ef8c86a7275/${Chunk}.m3u8</stringProp>
-            <stringProp name="HTTPSampler.domain">${__P(serverName, g11.g-mana.live)}</stringProp>
+            <stringProp name="TestPlan.comments">profile manifest</stringProp>
+            <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
-            <stringProp name="HTTPSampler.path">/media/${__P(dsUUID, 32e5bf61-768d-4973-87c2-0969100b2cb9)}/${Chunks}</stringProp>
+            <stringProp name="HTTPSampler.path">/media/${__P(dsUUID, 9ebc7d6f-6474-42f3-ae5c-fb7b9b288823)}/${Chunks}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
             <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -116,7 +116,7 @@ if (count &gt; 0) {
           </DebugSampler>
           <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mrouter" enabled="true">
-            <stringProp name="HTTPSampler.domain">${__P(serverName, g11.g-mana.live)}</stringProp>
+            <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">${last_mrouter_url}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
