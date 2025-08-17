@@ -52,12 +52,38 @@
           </ConstantTimer>
           <hashTree/>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">// Path for the live log file
+def liveLogPath = &quot;/tmp/live_responses.log&quot;  // Use &quot;C:/temp/live_responses.log&quot; on Windows
+
+// Ensure file exists
+def logFile = new File(liveLogPath)
+logFile.parentFile.mkdirs()
+if (!logFile.exists()) logFile.createNewFile()
+
+// Format and append sample data
+def timestamp = new Date().format(&quot;yyyy-MM-dd HH:mm:ss&quot;)
+
+// Get the request URL (works for HTTP Samplers)
+def requestUrl = prev.getUrlAsString() ?: &quot;N/A&quot;
+
+def sampleData = &quot;${timestamp},${prev.getSampleLabel()},${requestUrl},${prev.getResponseCode()},${prev.getResponseMessage()},${prev.getTime()},${prev.isSuccessful()}\n&quot;
+
+// Append to file
+logFile &lt;&lt; sampleData
+</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Listener>
+        <hashTree/>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="profilemanifest" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="profilemanifest">
             <stringProp name="TestPlan.comments">profile manifest</stringProp>
             <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -149,14 +175,14 @@ if (matchCount &gt; 0) {
             <boolProp name="displaySystemProperties">false</boolProp>
           </DebugSampler>
           <hashTree/>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
             <stringProp name="IfController.condition">&quot;${state}&quot; == &quot;true&quot;</stringProp>
             <boolProp name="IfController.evaluateAll">true</boolProp>
             <boolProp name="IfController.useExpression">false</boolProp>
             <stringProp name="TestPlan.comments">check if the last url is mrouter</stringProp>
           </IfController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mrouter" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="mrouter">
               <stringProp name="TestPlan.comments">mrouter url</stringProp>
               <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -177,27 +203,7 @@ if (matchCount &gt; 0) {
             </hashTree>
           </hashTree>
         </hashTree>
-        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener">
-          <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="script">// Get live log path from environment
-def liveLogPath = System.getenv(&quot;LIVE_LOG_PATH&quot;) ?: &quot;/tmp/tests/live_responses.log&quot;
-
-// Ensure file exists
-def logFile = new File(liveLogPath)
-logFile.parentFile.mkdirs()
-if (!logFile.exists()) logFile.createNewFile()
-
-// Format and append sample data
-def timestamp = new Date().format(&quot;yyyy-MM-dd HH:mm:ss&quot;)
-def sampleData = &quot;${timestamp},${prev.getSampleLabel()},${prev.getResponseCode()},${prev.getResponseMessage()},${prev.getTime()},${prev.isSuccessful()}\n&quot;
-logFile &lt;&lt; sampleData
-</stringProp>
-          <stringProp name="scriptLanguage">groovy</stringProp>
-        </JSR223Listener>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
