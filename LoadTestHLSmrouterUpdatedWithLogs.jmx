@@ -181,20 +181,18 @@ if (matchCount &gt; 0) {
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
-          <stringProp name="script">// Path to live log file inside container
-def timestamp = new Date().format(&quot;yyyyMMdd-HHmmss&quot;)
-def logFilePath = &quot;/tmp/tests/live_responses_${timestamp}.log&quot;
+          <stringProp name="script">// Get live log path from environment
+def liveLogPath = System.getenv(&quot;LIVE_LOG_PATH&quot;) ?: &quot;/tmp/tests/live_responses.log&quot;
 
-// Make sure file exists
-def logFile = new File(logFilePath)
-if (!logFile.exists()) {
-    logFile.createNewFile()
-}
+// Ensure file exists
+def logFile = new File(liveLogPath)
+logFile.parentFile.mkdirs()
+if (!logFile.exists()) logFile.createNewFile()
 
-// Append sample result to file
-def sampleData = &quot;${prev.getTimeStamp()},${prev.getSampleLabel()},${prev.getResponseCode()},${prev.getResponseMessage()},${prev.getTime()},${prev.isSuccessful()}\n&quot;
+// Format and append sample data
+def timestamp = new Date().format(&quot;yyyy-MM-dd HH:mm:ss&quot;)
+def sampleData = &quot;${timestamp},${prev.getSampleLabel()},${prev.getResponseCode()},${prev.getResponseMessage()},${prev.getTime()},${prev.isSuccessful()}\n&quot;
 logFile &lt;&lt; sampleData
-
 </stringProp>
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Listener>
