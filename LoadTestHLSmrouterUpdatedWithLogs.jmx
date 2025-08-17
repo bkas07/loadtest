@@ -57,7 +57,7 @@
           <intProp name="LoopController.loops">-1</intProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="profilemanifest">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="profilemanifest" enabled="true">
             <stringProp name="TestPlan.comments">profile manifest</stringProp>
             <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -181,29 +181,25 @@ if (matchCount &gt; 0) {
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
-          <stringProp name="script">// JSR223 Listener (Groovy)
+          <stringProp name="script">// Path to live log file inside container
+def timestamp = new Date().format(&quot;yyyyMMdd-HHmmss&quot;)
+def logFilePath = &quot;/tmp/tests/live_responses_${timestamp}.log&quot;
 
-// Only log HTTP samplers (optional filter)
-if (sampleEvent.getResult().getSampleLabel().toLowerCase().contains(&quot;http&quot;)) {
-    def samplerName = sampleEvent.getResult().getSampleLabel()
-    def responseCode = sampleEvent.getResult().getResponseCode()
-    def responseMessage = sampleEvent.getResult().getResponseMessage()
-    def responseTime = sampleEvent.getResult().getTime()
-    def threadName = sampleEvent.getResult().getThreadName()
-
-    def logLine = &quot;Sampler: ${samplerName} | Code: ${responseCode} | Msg: ${responseMessage} | Time: ${responseTime} ms | Thread: ${threadName}\n&quot;
-
-    // Write to clean log file
-    new File(&quot;/tests/live_responses.log&quot;) &lt;&lt; logLine
-
-    // Also send to JMeter console log
-    log.info(logLine)
+// Make sure file exists
+def logFile = new File(logFilePath)
+if (!logFile.exists()) {
+    logFile.createNewFile()
 }
+
+// Append sample result to file
+def sampleData = &quot;${prev.getTimeStamp()},${prev.getSampleLabel()},${prev.getResponseCode()},${prev.getResponseMessage()},${prev.getTime()},${prev.isSuccessful()}\n&quot;
+logFile &lt;&lt; sampleData
+
 </stringProp>
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Listener>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
