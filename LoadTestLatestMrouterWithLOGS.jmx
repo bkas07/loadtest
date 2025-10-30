@@ -198,7 +198,7 @@ if (matchCount &gt; 0) {
             <boolProp name="displaySystemProperties">false</boolProp>
           </DebugSampler>
           <hashTree/>
-          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
             <stringProp name="IfController.condition">!&quot;${last_mrouter_url}&quot;.equals(&quot;${previous_mrouter_url}&quot;)</stringProp>
             <boolProp name="IfController.evaluateAll">true</boolProp>
             <boolProp name="IfController.useExpression">false</boolProp>
@@ -210,6 +210,7 @@ if (matchCount &gt; 0) {
               <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.path">${last_mrouter_url}</stringProp>
+              <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
               <stringProp name="HTTPSampler.method">GET</stringProp>
               <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
               <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -218,7 +219,7 @@ if (matchCount &gt; 0) {
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
                 <stringProp name="TestPlan.comments">4 sec delay</stringProp>
                 <stringProp name="ConstantTimer.delay">${__P(delay,4000)}</stringProp>
               </ConstantTimer>
@@ -253,7 +254,7 @@ if (matchCount &gt; 0) {
             </hashTree>
           </hashTree>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
