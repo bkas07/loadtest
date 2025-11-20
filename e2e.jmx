@@ -34,7 +34,7 @@
           <stringProp name="TestPlan.comments">master manifest</stringProp>
           <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID,9ebc7d6f-6474-42f3-ae5c-fb7b9b288823)}/master.m3u8?_uid=${__groovy(def t=vars.get('threadNum') as int; props.get('uid_'+t),)}</stringProp>
+          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID,9ebc7d6f-6474-42f3-ae5c-fb7b9b288823)}/master.m3u8${__groovy(def t=vars.get('threadNum') as int; def s=props.get("uid_"+(t-1)); return s ? "?_sid="+s : "",)}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
