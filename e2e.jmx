@@ -34,7 +34,7 @@
           <stringProp name="TestPlan.comments">master manifest</stringProp>
           <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID,9ebc7d6f-6474-42f3-ae5c-fb7b9b288823)}/master.m3u8${__groovy(vars.get("uid_" + (ctx.getThreadNum() % ${__P(uid_count,1)})) ? "?_sid=" + props.get("uid_" + (ctx.getThreadNum() % ${__P(uid_count,1)})) : "")}</stringProp>
+          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID,9ebc7d6f-6474-42f3-ae5c-fb7b9b288823)}/master.m3u8?_sid=${uid}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
@@ -43,7 +43,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">Chunks</stringProp>
             <stringProp name="RegexExtractor.regex">(playlist_\d+\.m3u8\?[^ \r\n]*)</stringProp>
@@ -53,10 +53,22 @@
             <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
           </RegexExtractor>
           <hashTree/>
-          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
             <stringProp name="TestPlan.comments">3 sec</stringProp>
             <stringProp name="ConstantTimer.delay">${__P(delay,3000)}</stringProp>
           </ConstantTimer>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
+            <stringProp name="filename">C:/Users/bkark/Desktop/e2e.csv</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">uid</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
           <hashTree/>
         </hashTree>
         <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener" enabled="true">
@@ -90,7 +102,7 @@ logFile &lt;&lt; sampleData
           <intProp name="LoopController.loops">-1</intProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="profilemanifest" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="profilemanifest">
             <stringProp name="TestPlan.comments">profile manifest</stringProp>
             <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
