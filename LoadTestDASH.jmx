@@ -23,7 +23,7 @@
           <stringProp name="TestPlan.comments">master manifest</stringProp>
           <stringProp name="HTTPSampler.domain">${__P(serverName, stg1.g-mana.live)}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID, 177aed7e-bc84-4920-ab25-9536c9900b94)}/mainManifest.mpd</stringProp>
+          <stringProp name="HTTPSampler.path">/media/${__P(dsUUID,177aed7e-bc84-4920-ab25-9536c9900b94)}/mainManifest.mpd</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
