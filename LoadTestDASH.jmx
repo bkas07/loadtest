@@ -79,24 +79,38 @@ log.info(&quot;Extracted MPD URL: &quot; + mpdUrl)
           <stringProp name="cacheKey">true</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
-          <stringProp name="script">// Path for the live log file
-def liveLogPath = &quot;/tmp/live_responses.log&quot;  // Use &quot;C:/temp/live_responses.log&quot; on Windows
+          <stringProp name="script">
+// Path for the live log file (must be a mounted volume)
+def liveLogPath = &quot;/tests/live_responses.log&quot;
 
 // Ensure file exists
 def logFile = new File(liveLogPath)
-logFile.parentFile.mkdirs()
-if (!logFile.exists()) logFile.createNewFile()
 
-// Format and append sample data
+if (!logFile.parentFile.exists()) {
+    logFile.parentFile.mkdirs()
+}
+
+if (!logFile.exists()) {
+    logFile.createNewFile()
+}
+
+// Timestamp
 def timestamp = new Date().format(&quot;yyyy-MM-dd HH:mm:ss&quot;)
 
-// Get the request URL (works for HTTP Samplers)
+// Request URL
 def requestUrl = prev.getUrlAsString() ?: &quot;N/A&quot;
 
-def sampleData = &quot;${timestamp},${prev.getSampleLabel()},${requestUrl},${prev.getResponseCode()},${prev.getResponseMessage()},${prev.getTime()},${prev.isSuccessful()}\n&quot;
+// CSV line
+def sampleData = &quot;${timestamp},&quot; +
+        &quot;${prev.getSampleLabel()},&quot; +
+        &quot;${requestUrl},&quot; +
+        &quot;${prev.getResponseCode()},&quot; +
+        &quot;${prev.getResponseMessage()},&quot; +
+        &quot;${prev.getTime()},&quot; +
+        &quot;${prev.isSuccessful()}\n&quot;
 
-// Append to file
-logFile &lt;&lt; sampleData
+// Append safely
+logFile.append(sampleData)
 </stringProp>
           <stringProp name="scriptLanguage">groovy</stringProp>
         </JSR223Listener>
