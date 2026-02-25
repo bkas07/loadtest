@@ -4,7 +4,7 @@
  <vmap:AdBreak timeOffset="start" breakType="linear" breakId="preroll">
   <vmap:AdSource id="preroll-ad-1" allowMultipleAds="false" followRedirects="true">
    <vmap:AdTagURI templateType="vast3"><![CDATA[
-   https://raw.githubusercontent.com/bkas07/loadtest/refs/heads/main/singlead.xml
+   https://raw.githubusercontent.com/bkas07/loadtest/refs/heads/main/10adsvast.xml
    ]]></vmap:AdTagURI>
   </vmap:AdSource>
  </vmap:AdBreak>
@@ -12,7 +12,7 @@
  <vmap:AdBreak timeOffset="00:01:00" breakType="linear" breakId="midroll-1">
   <vmap:AdSource id="midroll-1-ad-1" allowMultipleAds="false" followRedirects="true">
    <vmap:AdTagURI templateType="vast3"><![CDATA[
-   https://raw.githubusercontent.com/subodh5/vast-sample/refs/heads/main/preroll.xml
+   https://raw.githubusercontent.com/bkas07/loadtest/refs/heads/main/10adsvast.xml
    ]]></vmap:AdTagURI>
   </vmap:AdSource>
  </vmap:AdBreak>
