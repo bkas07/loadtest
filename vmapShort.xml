@@ -1,0 +1,43 @@
+<vmap:VMAP xmlns:vmap="http://www.iab.net/videosuite/vmap" version="1.0">
+
+<vmap:AdBreak timeOffset="start" breakType="linear" breakId="Preroll">
+    <vmap:AdSource id="Preroll" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast1">
+        <![CDATA[ https://raw.githubusercontent.com/subodh5/vast-sample/refs/heads/main/preroll.xml ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+  <vmap:AdBreak timeOffset="00:00:25.000" breakType="linear" breakId="sbs-1">
+    <vmap:AdSource id="sbs-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast1">
+        <![CDATA[ https://podfusion.g-mana.live/media-server/place/b1c91f2c-f7a6-42dc-ba41-9a38553b2ebc/vast.xml?n=1 ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+  <vmap:AdBreak timeOffset="00:00:50.000" breakType="linear" breakId="overlay-1">
+    <vmap:AdSource id="overlay-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast2">
+        <![CDATA[ https://podfusion.g-mana.live/media-server/place/6ccbae14-0ae3-4d87-8aae-91a99b4a5f0a/vast.xml ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+  <vmap:AdBreak timeOffset="00:01:15.000" breakType="linear" breakId="underlay-1">
+    <vmap:AdSource id="underlay-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast3">
+        <![CDATA[ https://podfusion.g-mana.live/media-server/place/b17b590b-4fbd-4517-89a6-726dcaf942ec/vast.xml?n=1 ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+  <vmap:AdBreak timeOffset="00:01:30.000" breakType="linear" breakId="midroll-1">
+    <vmap:AdSource id="midroll-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast4">
+        <![CDATA[ https://raw.githubusercontent.com/bkas07/loadtest/refs/heads/main/single%20ad%20vast.xml ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+</vmap:VMAP>
