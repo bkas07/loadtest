@@ -27,7 +27,7 @@
   <vmap:AdBreak timeOffset="00:18:00.000" breakType="linear" breakId="midroll-1">
     <vmap:AdSource id="midroll-1" allowMultipleAds="true" followRedirects="true">
       <vmap:AdTagURI templateType="vast4">
-        <![CDATA[ https://raw.githubusercontent.com/bkas07/loadtest/refs/heads/main/single%20ad%20vast.xml ]]>
+        <![CDATA[ https://raw.githubusercontent.com/bkas07/loadtest/refs/heads/main/singlead.xml ]]>
       </vmap:AdTagURI>
     </vmap:AdSource>
   </vmap:AdBreak>
@@ -43,7 +43,7 @@
   <vmap:AdBreak timeOffset="00:25:00.000" breakType="linear" breakId="midroll-2">
     <vmap:AdSource id="midroll-2" allowMultipleAds="true" followRedirects="true">
       <vmap:AdTagURI templateType="vast6">
-        <![CDATA[ https://raw.githubusercontent.com/bkas07/loadtest/refs/heads/main/single%20ad%20vast.xml ]]>
+        <![CDATA[ https://raw.githubusercontent.com/bkas07/loadtest/refs/heads/main/singlead.xml ]]>
       </vmap:AdTagURI>
     </vmap:AdSource>
   </vmap:AdBreak>
