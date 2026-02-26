@@ -4,7 +4,7 @@
  <vmap:AdBreak timeOffset="start" breakType="linear" breakId="preroll">
   <vmap:AdSource id="preroll-ad-1" allowMultipleAds="false" followRedirects="true">
    <vmap:AdTagURI templateType="vast3"><![CDATA[
-   https://podfusion.g-mana.live/media-server/place/fb1cc112-d5f4-4b35-b8d1-37e0d1decf95/vast.xml?n=1
+   https://podfusion.g-mana.live/media-server/place/fb1cc112-d5f4-4b35-b8d1-37e0d1decf95/vast.xml?n=25
    ]]></vmap:AdTagURI>
   </vmap:AdSource>
  </vmap:AdBreak>
@@ -12,7 +12,7 @@
  <vmap:AdBreak timeOffset="00:01:00" breakType="linear" breakId="midroll-1">
   <vmap:AdSource id="midroll-1-ad-1" allowMultipleAds="false" followRedirects="true">
    <vmap:AdTagURI templateType="vast3"><![CDATA[
-   https://podfusion.g-mana.live/media-server/place/fb1cc112-d5f4-4b35-b8d1-37e0d1decf95/vast.xml?n=1
+   https://podfusion.g-mana.live/media-server/place/fb1cc112-d5f4-4b35-b8d1-37e0d1decf95/vast.xml?n=25
    ]]></vmap:AdTagURI>
   </vmap:AdSource>
  </vmap:AdBreak>
