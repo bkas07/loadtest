@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vmap:VMAP xmlns:vmap="http://www.iab.net/videosuite/vmap" version="1.0">
+
+  <vmap:AdBreak timeOffset="start" breakType="linear" breakId="Preroll">
+    <vmap:AdSource id="Preroll" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast4">
+        <![CDATA[ https://5d422.v.fwmrm.net/ad/g/1?nw=381986&prof=381986:TV3GROUP_LV_DAI_browser_Test&csid=DAI_smarttv_other_TV3_Life_HD_HVC&caid=80054808&resp=vast4&pvrn=11111&vprn=99999&mode=live&vdty=variable&vrdu=60&flag=+amcb+vicb+dtrd&cpsq=1;_fw_vcid2=3205728-344371-M&_fw_platform=TV&_fw_platform_OS=&_fw_platform_weborapp=&_fw_gdpr=1&_fw_gdpr_consent=CQGEJggQGEJggAcABBLVBKFsAP_gAEPgAAYgKhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAEAAAAAAAAAQAAAAAAAAAAACADfv9bROb-9IOd_x8v4v8_F_rE2_eT1l_tWvp7D9-cts7_XW89_fff_9Ln_-uB_-_3_sFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAACAAAAAAAEAAAAAAAAAAAAAAACQAVgACAsFgcSSAlYkECXEG0AABAAgEEABQik7MAQQBmy1F4sm0ZWmBaPmC57TAMkCIAA.f_wACHwAAAAA;ptgt=a&slau=preroll&metr=1031&maxd=60&mind=60 ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+  <vmap:AdBreak timeOffset="00:01:00" breakType="linear" breakId="midroll-1">
+    <vmap:AdSource id="midroll-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast4">
+        <![CDATA[ https://5d422.v.fwmrm.net/ad/g/1?nw=381986&prof=381986:TV3GROUP_LV_DAI_browser_Test&csid=DAI_smarttv_other_TV3_Life_HD_HVC&caid=80054808&resp=vast4&pvrn=11111&vprn=99999&mode=live&vdty=variable&vrdu=6000&flag=+amcb+vicb+dtrd&cpsq=1;_fw_vcid2=3205728-344371-M&_fw_platform=TV&_fw_platform_OS=&_fw_platform_weborapp=&_fw_gdpr=1&_fw_gdpr_consent=CQGEJggQGEJggAcABBLVBKFsAP_gAEPgAAYgKhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAEAAAAAAAAAQAAAAAAAAAAACADfv9bROb-9IOd_x8v4v8_F_rE2_eT1l_tWvp7D9-cts7_XW89_fff_9Ln_-uB_-_3_sFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAACAAAAAAAEAAAAAAAAAAAAAAACQAVgACAsFgcSSAlYkECXEG0AABAAgEEABQik7MAQQBmy1F4sm0ZWmBaPmC57TAMkCIAA.f_wACHwAAAAA;ptgt=a&slau=midroll&metr=1031&maxd=6000&mind=6000 ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+</vmap:VMAP>
