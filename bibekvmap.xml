@@ -1,0 +1,61 @@
+<vmap:VMAP xmlns:vmap="http://www.iab.net/videosuite/vmap" version="1.0">
+  <vmap:AdBreak timeOffset="start" breakType="linear" breakId="pre-roll">
+    <vmap:AdSource id="pre-roll-ad" allowMultipleAds="false" followRedirects="true">
+      <vmap:AdTagURI templateType="vast3">
+        <![CDATA[ https://podfusion.g-mana.live/media-server/place/fb1cc112-d5f4-4b35-b8d1-37e0d1decf95/vast.xml?n=1 ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+  
+  <vmap:AdBreak timeOffset="00:00:45.000" breakType="linear" breakId="midroll-1">
+    <vmap:AdSource id="midroll-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast4">
+        <![CDATA[ https://podfusion.g-mana.live/media-server/place/fb1cc112-d5f4-4b35-b8d1-37e0d1decf95/vast.xml?n=1 ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+  <vmap:AdBreak timeOffset="00:01:30.000" breakType="linear" breakId="sbs-1">
+    <vmap:AdSource id="sbs-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast1">
+        <![CDATA[ https://podfusion.g-mana.live/media-server/place/6b95b64d-4867-4640-8702-d772c37aa54d/vast.xml?n=1 ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+  
+  <vmap:AdBreak timeOffset="00:02:15.000" breakType="linear" breakId="overlay-1">
+    <vmap:AdSource id="overlay-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast2">
+        <![CDATA[ https://podfusion.g-mana.live/media-server/place/c77d486b-4b9f-45a2-a3cf-de28160c8164/vast.xml?n=1 ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+  
+  <vmap:AdBreak timeOffset="00:03:00.000" breakType="linear" breakId="underlay-1">
+    <vmap:AdSource id="underlay-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast3">
+        <![CDATA[ https://podfusion.g-mana.live/media-server/place/3ab2da85-03e6-41ab-8586-6cd57da78857/vast.xml?n=1 ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+  <vmap:AdBreak timeOffset="00:03:45.000" breakType="linear" breakId="pip-1">
+    <vmap:AdSource id="pip-1" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast5">
+        <![CDATA[ https://raw.githubusercontent.com/rabindratamang/vast/master/5sec.xml ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+ 
+  <vmap:AdBreak timeOffset="00:04:30.000" breakType="linear" breakId="midroll-2">
+    <vmap:AdSource id="midroll-2" allowMultipleAds="true" followRedirects="true">
+      <vmap:AdTagURI templateType="vast6">
+        <![CDATA[ https://raw.githubusercontent.com/bkas07/loadtest/refs/heads/main/singlead.xml ]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+
+</vmap:VMAP>
