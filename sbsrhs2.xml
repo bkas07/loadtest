@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd" version="3.0">
+    <Ad id="1">
+        <InLine>
+            <AdSystem><![CDATA[Campaign Manager]]></AdSystem>
+            <AdTitle><![CDATA[Ad rsh2]]></AdTitle>
+            <Impression><![CDATA[https://example.com/impression?id=1&cb={random}]]></Impression>
+            <Creatives>
+                <Creative id="creative_rsh2">
+                    <Linear>
+                        <Duration>00:00:30.093</Duration>
+                        <TrackingEvents>
+                            <Tracking event="start"><![CDATA[https://example.com/track?id=1&event=start]]></Tracking>
+                            <Tracking event="complete"><![CDATA[https://example.com/track?id=1&event=complete]]></Tracking>
+                        </TrackingEvents>
+                        <VideoClicks>
+                            <ClickThrough><![CDATA[https://r4---sn-h5qzen7s.gvt1.com/videoplayback/id/05fd70abe7d50a7e/aitags/15,18,22,106,109/itag/106/source/dclk_video_ads/requiressl/yes/xpc/EgVovf3BOg%3D%3D/acao/yes/ctier/L/ip/0.0.0.0/ipbits/0/expire/1804679558/sparams/acao,aitags,ctier,expire,id,ip,ipbits,met,mh,mip,mm,mn,ms,mv,mvi,pl,requiressl,rms,source,xpc/signature/7C04A9531F74FF810EAFD65CB6F094D7FE89EECD.821CC79E6E73414545C8D5777AF0AD3010BC6AD3/key/cms1/cpn/sqMjhMsyw8LiM4AO/cms_redirect/yes/met/1775021197,/mh/cG/mip/89.37.95.215/mm/28/mn/sn-h5qzen7s/ms/nvh/mt/1775020818/mv/m/mvi/4/pl/24/rms/nvh,nvh/file/file.mp4]]></ClickThrough>
+                        </VideoClicks>
+                        <MediaFiles>
+                            <MediaFile delivery="progressive" type="video/mp4" scalable="true" maintainAspectRatio="true"><![CDATA[https://r4---sn-h5qzen7s.gvt1.com/videoplayback/id/05fd70abe7d50a7e/aitags/15,18,22,106,109/itag/106/source/dclk_video_ads/requiressl/yes/xpc/EgVovf3BOg%3D%3D/acao/yes/ctier/L/ip/0.0.0.0/ipbits/0/expire/1804679558/sparams/acao,aitags,ctier,expire,id,ip,ipbits,met,mh,mip,mm,mn,ms,mv,mvi,pl,requiressl,rms,source,xpc/signature/7C04A9531F74FF810EAFD65CB6F094D7FE89EECD.821CC79E6E73414545C8D5777AF0AD3010BC6AD3/key/cms1/cpn/sqMjhMsyw8LiM4AO/cms_redirect/yes/met/1775021197,/mh/cG/mip/89.37.95.215/mm/28/mn/sn-h5qzen7s/ms/nvh/mt/1775020818/mv/m/mvi/4/pl/24/rms/nvh,nvh/file/file.mp4]]></MediaFile>
+                        </MediaFiles>
+                    </Linear>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>
